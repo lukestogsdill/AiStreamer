@@ -11,6 +11,7 @@ import pyttsx3
 import sys
 import argparse
 import os
+from speech_to_text import run_mic
     
 def initTTS():
     global engine
@@ -102,7 +103,6 @@ def EL_TTS(message):
 
 
 def read_chat():
-
     chat = pytchat.create(video_id=video_id)
     schat = pytchat.create(video_id=video_id, processor = SpeedCalculator(capacity = 20))
 
@@ -123,12 +123,19 @@ def read_chat():
 
             time.sleep(1)
 
+def stt():
+    response = run_mic()
+    if response["success"]:
+        message = response["transcription"]
+        print(f"\n{message}\n")
+        response = llm(message)
+        print(response)
+        Controller_TTS(response)
 
 def llm(message):
     client = OpenAI(
         api_key=OAI.key
     )
-
     response = client.chat.completions.create(
         model=OAI.model,
         messages=[
@@ -137,15 +144,14 @@ def llm(message):
         ],
         max_tokens=OAI.max_tokens,
     )
-
     return(response.choices[0].message.content)
-
 
 if __name__ == "__main__":
     initVar()
     print("\n\Running!\n\n")
 
     while True:
-        read_chat()
+        # read_chat()
+        stt()
         print("\n\nReset!\n\n")
-        time.sleep(2)
+        time.sleep(4)

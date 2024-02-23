@@ -8,7 +8,7 @@
     "OAI_data": [
         {
           "model": "gpt-3.5-turbo-1106",
-          "prompt": "You are a famous streamer, and you have a bitter tone towards your fans, try to be funny and sarcastic.",
+          "prompt": "You are a famous streamer, try to be funny and sarcastic. alternate your moods from being mean, funny, and nice",
           "temperature": 0.9,
             "max_tokens": 70,
             "top_p": 1,
