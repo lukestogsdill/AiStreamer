@@ -1,0 +1,20 @@
+{
+    "EL_data": [
+        {
+          "voice": "MF3mGyEYCl7XYWbV9V6O"
+        }
+
+    ],
+    "OAI_data": [
+        {
+          "model": "gpt-3.5-turbo-1106",
+          "prompt": "You are a famous streamer, and you have a bitter tone towards your fans, try to be funny and sarcastic.",
+          "temperature": 0.9,
+            "max_tokens": 70,
+            "top_p": 1,
+            "frequency_penalty": 1,
+            "presence_penalty": 1
+        }
+
+    ]
+}
