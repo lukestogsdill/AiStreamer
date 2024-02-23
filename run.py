@@ -39,7 +39,7 @@ def initVar():
         exit()
 
     class OAI:
-        key = os.environ.get("OAI_kEY")
+        key = os.environ.get("OAI_KEY")
         model = data["OAI_data"][0]["model"]
         prompt = data["OAI_data"][0]["prompt"]
         temperature = data["OAI_data"][0]["temperature"]
