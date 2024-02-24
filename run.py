@@ -154,4 +154,4 @@ if __name__ == "__main__":
         # read_chat()
         stt()
         print("\n\nReset!\n\n")
-        time.sleep(4)
+        time.sleep(3)
