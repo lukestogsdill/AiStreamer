@@ -12,6 +12,7 @@ import sys
 import argparse
 import os
 from speech_to_text import run_mic
+from dotenv import load_dotenv
     
 def initTTS():
     global engine
@@ -31,6 +32,7 @@ def initVar():
     global tts_type
     global OAI
     global EL
+    load_dotenv()
 
     try:
         with open("config.json", "r") as json_file:
@@ -120,7 +122,6 @@ def read_chat():
                 schat.terminate()
                 return
 
-
             time.sleep(1)
 
 def stt():
@@ -152,6 +153,7 @@ if __name__ == "__main__":
 
     while True:
         # read_chat()
-        stt()
+        # stt()
+        llm('Pizza is the best food in the world')
         print("\n\nReset!\n\n")
         time.sleep(3)
